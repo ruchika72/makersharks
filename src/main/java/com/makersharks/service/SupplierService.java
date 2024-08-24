@@ -20,6 +20,12 @@ public class SupplierService {
         return supplierRepository.findByLocationNatureAndProcess(location, natureOfBusiness, process, pageable);
     }
 
+    public List<Supplier> searchSuppliers(String location, NatureOfBusiness natureOfBusiness, ManufacturingProcess process) {
+        List<Supplier> list = supplierRepository.findByLocationNatureAndProcess(location, natureOfBusiness, process);
+        System.out.println(list.toString());
+        return list;
+    }
+
     public List <Supplier> getAll() {
         return supplierRepository.findAll();
     }

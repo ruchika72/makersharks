@@ -37,18 +37,22 @@ mvn spring-boot:run
   - **Password**: password
  
 ### API Endpoints
-1. **Get List of All Suppliers**
-
-   ```bash
-   curl -X GET "http://localhost:8080/api/supplier"
-   ```
+1. **Search Suppliers by Custom Query**
+```bash
+curl -X POST "http://localhost:8080/api/supplier/search?query=fetch%20the%20list%20of%20manufacturers%20that%20located%20in%20UK%20andisSMALL_scale%20and%20does%20coating"
+```
 
 2. **Query Suppliers by Location, Nature of Business, and Manufacturing Process**
 ```bash
 curl -X POST "http://localhost:8080/api/supplier/query?location=India&natureOfBusiness=SMALL_SCALE&process=THREE_D_PRINTING&page=0&size=10&sort=supplierId,asc"
 ```
+3. **Get List of All Suppliers**
 
-3. **Search Suppliers by Custom Query**
-```bash
-curl -X POST "http://localhost:8080/api/supplier/search?query=fetch%20the%20list%20of%20manufacturers%20that%20located%20in%20UK%20andisSMALL_scale%20and%20does%20coating"
-```
+   ```bash
+   curl -X GET "http://localhost:8080/api/supplier"
+   ```
+
+### Executing Test Cases
+  ```bash
+  mvn test
+  ```

@@ -41,6 +41,15 @@ public class Supplier {
     @Enumerated(EnumType.STRING)
     private Set<ManufacturingProcess> manufacturingProcesses;
 
+    Supplier() {}
+    public Supplier(String companyName, String website, String location, NatureOfBusiness natureOfBusiness, Set<ManufacturingProcess> manufacturingProcesses) {
+        this.companyName = companyName;
+        this.website = website;
+        this.location = location;
+        this.natureOfBusiness = natureOfBusiness;
+        this.manufacturingProcesses = manufacturingProcesses;
+    }
+    
     // Getters and Setters
     @Override
     public String toString() {
